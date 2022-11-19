@@ -70,13 +70,13 @@ while True:
     cmd = "top -bn1 | grep load | awk '{printf \"%.2fLA\", $(NF-2)}'"
     CPU = subprocess.check_output(cmd, shell = True )
 
-    cmd = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2 }'"    
+    cmd = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2 }'"
     MemUsage = subprocess.check_output(cmd, shell = True )
-    
+
     cmd = "df -h | awk '$NF==\"/\"{printf \"HDD: %d/%dGB %s\", $3,$2,$5}'"
     cmd = "df -h | awk '$NF==\"/\"{printf \"%d/%dGB\", $3,$2}'"
     Disk = subprocess.check_output(cmd, shell = True )
-    
+
     cmd = "vcgencmd measure_temp | cut -d '=' -f 2 | head --bytes -1"
     Temperature = subprocess.check_output(cmd, shell = True )
 
@@ -103,7 +103,7 @@ while True:
     draw.text((x+87, top+25), str(CPU,'utf-8'), font=font, fill=255)
     # Text IP address
     draw.text((x+19, top+45), str(IP,'utf-8'),  font=font, fill=255)
-    
+
    # Display image.
     oled.image(image)
     oled.show()

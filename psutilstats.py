@@ -45,7 +45,7 @@ def get_ipv4():
     ifaces=PS.net_if_addrs()
     for key in ifaces:
         if (key!="lo"): # Ignore the loopback interface
-            # if it's not loopback, we look for the first IPv4 address    
+            # if it's not loopback, we look for the first IPv4 address
             iface = ifaces[key]
             for addr in iface:
                 if addr.family is socket.AddressFamily.AF_INET:
@@ -84,7 +84,7 @@ while True:
 
     IP = get_ipv4()
     # IP = get_ipv4_from_interface("eth0") # Alternative
-    
+
     CPU = "CPU {:.1f}%".format(round(PS.cpu_percent(),1))
 
     temps=PS.sensors_temperatures()

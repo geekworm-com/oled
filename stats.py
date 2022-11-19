@@ -67,7 +67,7 @@ while True:
     draw.text((80, 16), str(Temp,'utf-8') , font=font, fill=255)
     draw.text((0, 32), str(MemUsage,'utf-8'), font=font, fill=255)
     draw.text((0, 48), str(Disk,'utf-8'), font=font, fill=255)
-        
+
     # Display image
     oled.image(image)
     oled.show()

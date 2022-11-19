@@ -104,7 +104,7 @@ while True:
 
          # Draw a black filled box to clear the image.
          draw.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
-         
+
          # INA219 data reading
          Vout = round(ina.voltage(), 3)
          Iout = round(ina.current(), 2)
@@ -138,7 +138,7 @@ while True:
          #draw.text((0, 32), "Power: " + str(Power) + " mW", font=font, fill=255)
          #draw.text((0, 48), "Shunt_V : " + str(Shunt_V) + " mV", font=font, fill=255)
          #draw.text((0, 48), "Load_V : " + str(Load_V) + " V", font=font, fill=255)
-         
+
          #Battery info
          draw.text((0, 48), "BAT:" + str(Vbat) + " V", font=font, fill=255)
          draw.text((80, 48), str(Vcap), font=font, fill=255)
@@ -149,7 +149,7 @@ while True:
          draw.text((75, 32), "FAN:" + str(fan), font=font, fill=255)
          #draw.text((0, 32), str(MemUsage,'utf-8'), font=font, fill=255)
          #draw.text((0, 96), str(Disk,'utf-8'), font=font, fill=255)
-        
+
          # Display image
          oled.image(image)
          oled.show()
